@@ -20,7 +20,7 @@ const Login = () => {
         formData.append('username', logindetail['username']); 
         formData.append('password', logindetail['password']);
 
-        axios.post(`http://127.0.0.1:8000/accounts/api-token-auth/`, formData)
+        axios.post(`https://blm-test1232.herokuapp.com/accounts/api-token-auth/`, formData)
         .then(res => {
             window.localStorage.setItem('token', res.data['token']);
             // console.log(window.localStorage.getItem('token'))

@@ -18,7 +18,7 @@ const AddTransaction = () => {
 
     function transaction(){
         let token = window.localStorage.getItem('token')
-        axios.post('http://127.0.0.1:8000/transactions/get_transactions/', transactiondetail, {headers: {"Authorization": `Token ${token}`}})
+        axios.post('https://blm-test1232.herokuapp.com/transactions/get_transactions/', transactiondetail, {headers: {"Authorization": `Token ${token}`}})
         .then(res => {
             navigate("/list-transaction");        
         }).catch(error => {
@@ -33,7 +33,7 @@ const AddTransaction = () => {
 
     useEffect(() => { 
         let token = window.localStorage.getItem('token')
-        axios.get(`http://127.0.0.1:8000/accounts/get_users/`, {headers: {"Authorization": `Token ${token}`}})
+        axios.get(`https://blm-test1232.herokuapp.com/accounts/get_users/`, {headers: {"Authorization": `Token ${token}`}})
         .then(res => {
             setUserlist(res['data'])
         }).catch(error => {

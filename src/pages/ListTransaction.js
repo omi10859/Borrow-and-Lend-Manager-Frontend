@@ -22,7 +22,7 @@ const AddTransaction = () => {
 
     function get_list(){
         // todo: use base urls
-        axios.get(`http://127.0.0.1:8000/transactions/get_transactions/`, {headers: {"Authorization": `Token ${token}`}})
+        axios.get(`https://blm-test1232.herokuapp.com/transactions/get_transactions/`, {headers: {"Authorization": `Token ${token}`}})
         .then(res => {
             setTransactiondetail(res['data'])
         }).catch(error => {
@@ -31,7 +31,7 @@ const AddTransaction = () => {
     }
 
     function updateTransaction(id){
-        let url = 'http://127.0.0.1:8000/transactions/mark_paid/' + String(id) + '/'
+        let url = 'https://blm-test1232.herokuapp.com/transactions/mark_paid/' + String(id) + '/'
         axios.put(url, null, {headers: {"Authorization": `Token ${token}`}})
         .then(res => {
             get_list()
